@@ -52,6 +52,8 @@ vim.opt.timeoutlen = 300
 
 -- Completion
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.opt.pumheight = 10
+vim.opt.pumblend = 10
 
 -- Don't show mode in cmdline (lualine shows it)
 vim.opt.showmode = false
@@ -62,3 +64,24 @@ vim.opt.linebreak = true
 
 -- Mouse
 vim.opt.mouse = "a"
+
+-- Grep
+vim.opt.grepprg = "rg --vimgrep"
+vim.opt.grepformat = "%f:%l:%c:%m"
+
+-- Folding
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+
+-- Splits
+vim.opt.splitkeep = "screen"
+
+-- Better diff
+vim.opt.diffopt:append "linematch:60"
+
+-- Filetype associations
+vim.filetype.add({
+  extension = {
+    jsonl = "json",
+  },
+})
