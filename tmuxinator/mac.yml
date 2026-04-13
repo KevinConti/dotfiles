@@ -1,0 +1,26 @@
+name: mac
+root: ~/Development
+
+windows:
+  - ppc-agent:
+      root: ~/Development/ppc-agent
+      panes:
+        - # ppc-agent shell
+  - iex:
+      root: ~/Development/ppc-agent/ppc_agent
+      panes:
+        - mix clean && mix compile --warnings-as-errors && iex -S mix phx.server
+  - nvim config:
+      root: ~/Development
+      layout: even-horizontal
+      panes:
+        - # left pane
+        - # right pane
+  - pipelines:
+      root: ~/Development/pipelines
+      panes:
+        - # pipelines shell
+  - pipelines-iex:
+      root: ~/Development/pipelines
+      panes:
+        - mix clean && mix compile --warnings-as-errors && iex -S mix phx.server

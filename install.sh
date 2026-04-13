@@ -18,4 +18,9 @@ link() {
 # tmux
 link "$DOTFILES/tmux/.tmux.conf" "$HOME/.tmux.conf"
 
+# tmuxinator
+mkdir -p "$HOME/.tmuxinator"
+link "$DOTFILES/tmuxinator/mac.yml" "$HOME/.tmuxinator/mac.yml"
+link "$DOTFILES/tmuxinator/vps.yml" "$HOME/.tmuxinator/vps.yml"
+
 echo "Done!"

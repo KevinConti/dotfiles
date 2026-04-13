@@ -1,0 +1,16 @@
+name: vps
+root: ~/Development
+
+post:
+  - tmux set-hook -t vps after-new-window "send-keys 'ssh nomad-vps-tailscale' Enter"
+
+windows:
+  - planning:
+      panes:
+        - ssh -t nomad-vps-tailscale 'cd ~/development/work && exec $SHELL -l'
+  - cc-explorer:
+      panes:
+        - ssh -t nomad-vps-tailscale 'cd ~/tools/claude-code && exec $SHELL -l'
+  - agent-ex:
+      panes:
+        - ssh -t nomad-vps-tailscale 'cd ~/development/agent-ex && exec $SHELL -l'
