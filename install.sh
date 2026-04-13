@@ -21,6 +21,10 @@ link "$DOTFILES/zshrc" "$HOME/.zshrc"
 # tmux
 link "$DOTFILES/tmux/.tmux.conf" "$HOME/.tmux.conf"
 
+# nvim
+mkdir -p "$HOME/.config"
+link "$DOTFILES/nvim" "$HOME/.config/nvim"
+
 # tmuxinator
 mkdir -p "$HOME/.tmuxinator"
 link "$DOTFILES/tmuxinator/mac.yml" "$HOME/.tmuxinator/mac.yml"
