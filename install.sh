@@ -15,6 +15,9 @@ link() {
   echo "Linked $dst -> $src"
 }
 
+# zsh
+link "$DOTFILES/zshrc" "$HOME/.zshrc"
+
 # tmux
 link "$DOTFILES/tmux/.tmux.conf" "$HOME/.tmux.conf"
 
