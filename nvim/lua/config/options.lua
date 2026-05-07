@@ -29,8 +29,10 @@ vim.opt.sidescrolloff = 8
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
--- System clipboard via OSC 52 (works over SSH/tmux)
-vim.opt.clipboard = "unnamedplus"
+-- System clipboard via OSC 52 (copy only — paste uses terminal's native paste
+-- with bracketed paste, since OSC 52 read is unreliable across terminals/SSH).
+-- Yank with "+y or <leader>y to send to system clipboard.
+-- Paste from system clipboard: use terminal paste (Cmd+V / Ctrl+Shift+V) in insert mode.
 vim.g.clipboard = {
   name = "OSC 52",
   copy = {
@@ -38,8 +40,8 @@ vim.g.clipboard = {
     ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
   },
   paste = {
-    ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
-    ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+    ["+"] = function() return { {""}, "v" } end,
+    ["*"] = function() return { {""}, "v" } end,
   },
 }
 
